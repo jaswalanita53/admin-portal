@@ -1,0 +1,3 @@
+export const tabledata = {
+    "headers":["NAME", "START DATE", "END DATE", "MIN LOS", "MAX LOS", "CUT-OFF", "LAST MINUTE BOOKING", "DAYS OF WEEK", "CLOSED TO ARRIVAL", "CLOSED TO DEPARTURE"]
+}

@@ -1,0 +1,4 @@
+.ck-editor__main div{
+    min-height: 500px !important; /* Adjust the height as needed */
+    width: 100% !important; /* Ensure the editor fills its container */
+  }

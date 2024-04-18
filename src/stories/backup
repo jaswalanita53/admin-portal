@@ -1,0 +1,3025 @@
+// import React from "react";
+// // import AdminShiftManager from "../pages/AdminShiftManager";
+// import { ListReservation } from "../pages/ListReservation";
+// import axios from 'axios';
+// import MockAdapter from 'axios-mock-adapter';
+
+// const meta = {
+//     title: 'Reservation',
+//     component: ListReservation,
+// }
+
+// // Define the Template component that will be used for each story
+// const Template = (args) => <ListReservation {...args} />;
+// const mockAdapter = new MockAdapter(axios);
+// // Define your stories
+// export const Default = Template.bind({});
+// Default.args = {
+//     storyBookProps: {
+        
+//     }
+// };
+
+// let mockdata = {
+//     "status": true,
+//         "data": [
+//             {
+//                 "_id": "64475cedb0ae5f76dd42238f",
+//                 "userKey": "64475cedb0ae5f76dd42238e",
+//                 "bookingID": 617795958,
+//                 "roomNumber": 3,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 300,
+//                 "totalTax": 42.857142857142854,
+//                 "totalFees": 30,
+//                 "totalPrice": 102.85714285714286,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-04-25",
+//                 "checkInDate": "2023-04-25",
+//                 "checkOutDate": "2023-04-26",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64475cedb0ae5f76dd42238e",
+//                     "firstName": "DELL",
+//                     "lastName": "Dev",
+//                     "emailAddress": "dev@gmail.com",
+//                     "phoneNumber": "1231231231",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     },
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     },
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64475d8cb0ae5f76dd422393",
+//                 "userKey": "64475d8cb0ae5f76dd422392",
+//                 "bookingID": 471360933,
+//                 "roomNumber": 5,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 500,
+//                 "totalTax": 71.42857142857143,
+//                 "totalFees": 50,
+//                 "totalPrice": 171.42857142857144,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-04-25",
+//                 "checkInDate": "2023-04-06",
+//                 "checkOutDate": "2023-04-10",
+//                 "totalDays": 4,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": "4"
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64475d8cb0ae5f76dd422392",
+//                     "firstName": "tset2",
+//                     "lastName": "kumar",
+//                     "emailAddress": "tester@gmail.com",
+//                     "phoneNumber": "12312312112",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64490ceaaded88113e43deb2",
+//                 "userKey": "64490ceaaded88113e43deb1",
+//                 "bookingID": 271578132,
+//                 "roomNumber": 5,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 34.285714285714285,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-04-26",
+//                 "checkInDate": "2023-04-26",
+//                 "checkOutDate": "2023-04-27",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64490ceaaded88113e43deb1",
+//                     "firstName": "DELL",
+//                     "lastName": "asdasaaa",
+//                     "emailAddress": "test@yopmail.com",
+//                     "phoneNumber": "123123123123123",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "644913d15abca13fade6c111",
+//                 "userKey": "644913d15abca13fade6c110",
+//                 "bookingID": 771115348,
+//                 "roomNumber": 6,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 34.285714285714285,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-04-26",
+//                 "checkInDate": "2023-04-26",
+//                 "checkOutDate": "2023-04-27",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "644913d15abca13fade6c110",
+//                     "firstName": "dfgdfsxgdfg",
+//                     "lastName": "dfgdfgdfgdfg",
+//                     "emailAddress": "dfgdfg@dsfsdfsd.com",
+//                     "phoneNumber": "341241241341234",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64491e192b5198a4a7aafa61",
+//                 "userKey": "64491e192b5198a4a7aafa60",
+//                 "bookingID": 666699639,
+//                 "roomNumber": 8,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 34.285714285714285,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-04-26",
+//                 "checkInDate": "2023-04-26",
+//                 "checkOutDate": "2023-04-27",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64491e192b5198a4a7aafa60",
+//                     "firstName": "asdasdasd",
+//                     "lastName": "adsasd",
+//                     "emailAddress": "asdasdasd@dsadas.com",
+//                     "phoneNumber": "919936603493",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "644f82602afcf09b49f9b342",
+//                 "userKey": "644f82602afcf09b49f9b341",
+//                 "bookingID": 112226825,
+//                 "roomNumber": 1,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 34.285714285714285,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-05-01",
+//                 "checkInDate": "2023-05-01",
+//                 "checkOutDate": "2023-05-02",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "644f82602afcf09b49f9b341",
+//                     "firstName": "dasd",
+//                     "lastName": "asdasd",
+//                     "emailAddress": "asdsa@das.com",
+//                     "phoneNumber": "123123123123",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "a",
+//                         "address2": "a",
+//                         "city": "asd",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "6464dcf88e44d17e1523ceed",
+//                 "userKey": "6464dcf78e44d17e1523ceec",
+//                 "bookingID": 724035634,
+//                 "roomNumber": 2,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "400.0",
+//                 "discount": "0",
+//                 "roomTotal": "400.0",
+//                 "totalTax": "28.0",
+//                 "totalFees": "64.0",
+//                 "totalPrice": "492.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-05-17",
+//                 "checkInDate": "2023-01-30",
+//                 "checkOutDate": "2023-02-03",
+//                 "totalDays": 4,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6464dcf78e44d17e1523ceec",
+//                     "firstName": "Alejandro",
+//                     "lastName": "Licona",
+//                     "emailAddress": "liconaweb3@outlook.com",
+//                     "phoneNumber": "3054587664",
+//                     "country": "United States",
+//                     "billingAddress": {
+//                         "zipcode": "33176",
+//                         "address1": "1",
+//                         "address2": "1",
+//                         "city": "city",
+//                         "state": "state",
+//                         "emailAddress": "liconaweb3@outlook.com"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "646b36caeba32d2ff40a226d",
+//                 "userKey": "646b36caeba32d2ff40a226c",
+//                 "bookingID": 961215982,
+//                 "roomNumber": 1,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 34.285714285714285,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-05-22",
+//                 "checkInDate": "2023-05-22",
+//                 "checkOutDate": "2023-05-23",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "646b36caeba32d2ff40a226c",
+//                     "firstName": "asadsas",
+//                     "lastName": "asdasdas",
+//                     "emailAddress": "sadsad@dasdasd.com",
+//                     "phoneNumber": "1231231231",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "",
+//                         "address1": "",
+//                         "address2": "",
+//                         "city": "",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "647edfded51f94dc853598dc",
+//                 "userKey": "647edfded51f94dc853598db",
+//                 "bookingID": 591725691,
+//                 "roomNumber": 6,
+//                 "noOfRooms": 7,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 700,
+//                 "totalTax": 100,
+//                 "totalFees": 70,
+//                 "totalPrice": 870,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-06",
+//                 "checkInDate": "2023-06-06",
+//                 "checkOutDate": "2023-06-07",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 5
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "647edfded51f94dc853598db",
+//                     "firstName": "Veronica",
+//                     "lastName": "Newton",
+//                     "emailAddress": "gekave@mailinator.com",
+//                     "phoneNumber": "+1 (906) 349-1185",
+//                     "country": "Female",
+//                     "billingAddress": {
+//                         "zipcode": "95056",
+//                         "address1": "193 Rocky Fabien Court",
+//                         "address2": "Ut corporis perferen",
+//                         "city": "Temporibus nostrud m",
+//                         "state": "Male",
+//                         "country": "Female"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     },
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "647f158e7fbfc6765268598c",
+//                 "userKey": "647f158e7fbfc6765268598b",
+//                 "bookingID": 226689104,
+//                 "roomNumber": 7,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "200.0",
+//                 "discount": "0",
+//                 "roomTotal": "200.0",
+//                 "totalTax": "14.0",
+//                 "totalFees": "32.0",
+//                 "totalPrice": "246.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-06",
+//                 "checkInDate": "2023-06-08",
+//                 "checkOutDate": "2023-06-10",
+//                 "totalDays": 2,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "647f158e7fbfc6765268598b",
+//                     "firstName": "Evangeline",
+//                     "lastName": "Fields",
+//                     "emailAddress": "hebepon@mailinator.com",
+//                     "phoneNumber": "7984561247",
+//                     "country": "Congo",
+//                     "billingAddress": {
+//                         "zipcode": "31295",
+//                         "address1": "216 Oak Boulevard",
+//                         "address2": "Et assumenda sapient",
+//                         "city": "Eligendi elit sed m",
+//                         "state": "Ut similique eius et",
+//                         "emailAddress": "qaqokacyv@mailinator.com"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "647f2529f75bfe264336f773",
+//                 "userKey": "647f2529f75bfe264336f772",
+//                 "bookingID": 836222343,
+//                 "roomNumber": 7,
+//                 "noOfRooms": 24,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 4800,
+//                 "totalTax": 342.85714285714283,
+//                 "totalFees": 240,
+//                 "totalPrice": 5382.857142857143,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-06",
+//                 "checkInDate": "2023-06-09",
+//                 "checkOutDate": "2023-06-11",
+//                 "totalDays": 2,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 4
+//                     },
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 16
+//                     },
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 4
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "647f2529f75bfe264336f772",
+//                     "firstName": "Hayley",
+//                     "lastName": "Maddox",
+//                     "emailAddress": "depej@mailinator.com",
+//                     "phoneNumber": "+1 (908) 733-9572",
+//                     "country": "Female",
+//                     "billingAddress": {
+//                         "zipcode": "24404",
+//                         "address1": "26 North Green Nobel Parkway",
+//                         "address2": "Est dolor eiusmod a",
+//                         "city": "In ut culpa vitae do",
+//                         "state": "Female",
+//                         "country": "Female"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     },
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     },
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64801150a92a4bcd6eb7711f",
+//                 "userKey": "64801150a92a4bcd6eb7711e",
+//                 "bookingID": 227686696,
+//                 "roomNumber": 3,
+//                 "noOfRooms": 11,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 1100,
+//                 "totalTax": 157.14285714285714,
+//                 "totalFees": 110,
+//                 "totalPrice": 1367.142857142857,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-07",
+//                 "checkInDate": "2023-06-07",
+//                 "checkOutDate": "2023-06-08",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 10
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64801150a92a4bcd6eb7711e",
+//                     "firstName": "Mikayla",
+//                     "lastName": "Branch",
+//                     "emailAddress": "gatelasah@mailinator.com",
+//                     "phoneNumber": "+1 (946) 524-5331",
+//                     "country": "Male",
+//                     "billingAddress": {
+//                         "zipcode": "91043",
+//                         "address1": "275 Clarendon Court",
+//                         "address2": "Cupiditate sapiente ",
+//                         "city": "Quidem asperiores mo",
+//                         "state": "Male",
+//                         "country": "Male"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     },
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64806c1b437ea691d00031fc",
+//                 "userKey": "64806c1b437ea691d00031fb",
+//                 "bookingID": 564026965,
+//                 "roomNumber": 7,
+//                 "noOfRooms": 13,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 1300,
+//                 "totalTax": 185.71428571428572,
+//                 "totalFees": 130,
+//                 "totalPrice": 1615.7142857142858,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-07",
+//                 "checkInDate": "2023-06-07",
+//                 "checkOutDate": "2023-06-08",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 4
+//                     },
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "645b349ac7a781a9309aace4",
+//                         "noOfRooms": 1
+//                     },
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 7
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64806c1b437ea691d00031fb",
+//                     "firstName": "Evelyn",
+//                     "lastName": "Cantu",
+//                     "emailAddress": "zocuhyg@mailinator.com",
+//                     "phoneNumber": "+1 (283) 927-7897",
+//                     "country": "Female",
+//                     "billingAddress": {
+//                         "zipcode": "25596",
+//                         "address1": "258 Nobel Court",
+//                         "address2": "Dolore pariatur Rer",
+//                         "city": "Molestiae duis modi ",
+//                         "state": "Female",
+//                         "country": "Female"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     },
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     },
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     },
+//                     {
+//                         "_id": "645b349ac7a781a9309aace4",
+//                         "roomName": "Twin",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Twin Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d560ff01e264f6b92199"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "6481c8c4407f0931795b4b7a",
+//                 "userKey": "6481c8c4407f0931795b4b79",
+//                 "bookingID": 555338560,
+//                 "roomNumber": 6,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "200.0",
+//                 "discount": "0",
+//                 "roomTotal": "200.0",
+//                 "totalTax": "14.0",
+//                 "totalFees": "32.0",
+//                 "totalPrice": "246.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-08",
+//                 "checkInDate": "2023-06-08",
+//                 "checkOutDate": "2023-06-10",
+//                 "totalDays": 2,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6481c8c4407f0931795b4b79",
+//                     "firstName": "Emily",
+//                     "lastName": "Fitzpatrick",
+//                     "emailAddress": "nujuk@mailinator.com",
+//                     "phoneNumber": "1231231231",
+//                     "country": "Palestinian Territory Occupied",
+//                     "billingAddress": {
+//                         "zipcode": "61917",
+//                         "address1": "19 East Nobel Court",
+//                         "address2": "Possimus quos optio",
+//                         "city": "Rerum consectetur r",
+//                         "state": "Quod laborum quis in",
+//                         "emailAddress": "lewusiby@mailinator.com"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "6481d18458e4d570db043f94",
+//                 "userKey": "6481d18458e4d570db043f93",
+//                 "bookingID": 449097975,
+//                 "roomNumber": 8,
+//                 "noOfRooms": 2,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "200.0",
+//                 "discount": "0",
+//                 "roomTotal": "200.0",
+//                 "totalTax": "14.0",
+//                 "totalFees": "32.0",
+//                 "totalPrice": "246.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-08",
+//                 "checkInDate": "2023-06-09",
+//                 "checkOutDate": "2023-06-10",
+//                 "totalDays": 1,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 2
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6481d18458e4d570db043f93",
+//                     "firstName": "Lara",
+//                     "lastName": "Washington",
+//                     "emailAddress": "cafot@mailinator.com",
+//                     "phoneNumber": "2312312312",
+//                     "country": "Morocco",
+//                     "billingAddress": {
+//                         "zipcode": "37667",
+//                         "address1": "16 East Milton Freeway",
+//                         "address2": "Cumque qui velit nem",
+//                         "city": "Accusamus nisi venia",
+//                         "state": "Et exercitationem qu",
+//                         "emailAddress": "leqeq@mailinator.com"
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "6482c0594ac42708842d5049",
+//                 "userKey": "6482c0594ac42708842d5048",
+//                 "bookingID": 349699183,
+//                 "roomNumber": 2,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-09",
+//                 "checkInDate": "2023-06-09",
+//                 "checkOutDate": "2023-06-10",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6482c0594ac42708842d5048",
+//                     "firstName": "test ",
+//                     "lastName": "user",
+//                     "emailAddress": "test23@gmail.com",
+//                     "phoneNumber": "9383322234",
+//                     "country": "",
+//                     "billingAddress": {
+//                         "zipcode": "75677676",
+//                         "address1": "test address",
+//                         "address2": "address 2",
+//                         "city": "test city",
+//                         "state": "",
+//                         "country": ""
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "648718f9518f73bafd29324d",
+//                 "userKey": "648716c2eeaf34a0ec01b22b",
+//                 "bookingID": 330119132,
+//                 "roomNumber": 5,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-12",
+//                 "checkInDate": "2023-06-12",
+//                 "checkOutDate": "2023-06-13",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "648716c2eeaf34a0ec01b22b",
+//                     "emailAddress": "dummy@gmail.com",
+//                     "billingAddress": {
+//                         "zipcode": "79927",
+//                         "address1": "73 Fabien Street",
+//                         "address2": "Placeat reprehender",
+//                         "city": "Rerum occaecat vel c",
+//                         "state": "Quaerat veniam aut ",
+//                         "country": "Kyrgyzstan",
+//                         "email": "vysep@mailinator.com"
+//                     },
+//                     "country": "Kyrgyzstan",
+//                     "firstName": "Troy",
+//                     "lastName": "Woodward",
+//                     "phoneNumber": "+1 (555) 433-2796"
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+            
+//             {
+//                 "_id": "6490065926139fd4a46c7901",
+//                 "userKey": "649006562d21febfe491f7ef",
+//                 "bookingID": 576560873,
+//                 "roomNumber": 2,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": -300,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": -275.7142857142857,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-19",
+//                 "checkInDate": "2023-06-19",
+//                 "checkOutDate": "2023-06-16",
+//                 "totalDays": -3,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "649006562d21febfe491f7ef",
+//                     "emailAddress": "monk123@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "85625",
+//                         "address1": "362 Milton Drive",
+//                         "address2": "Ea praesentium illo ",
+//                         "city": "Laborum Hic quae vo",
+//                         "state": "Autem sunt Nam ulla",
+//                         "country": "Iran",
+//                         "email": "niqateqixo@mailinator.com"
+//                     },
+//                     "country": "Iran",
+//                     "firstName": "Oprah",
+//                     "lastName": "Craft",
+//                     "phoneNumber": "+1 (854) 436-3667",
+//                     "scannedIdData": {
+//                         "document": {
+//                             "privateName": "MICHELLE MARIE",
+//                             "abbr3Country": "USA",
+//                             "abbrCountry": null,
+//                             "address": "1622 W SPARKS ST",
+//                             "city": "PHILADELPHIA",
+//                             "class": "C",
+//                             "country": "United States of America",
+//                             "dob": "1971-03-23",
+//                             "expires": "2022-03-23",
+//                             "eyes": "BROWN",
+//                             "familyName": "PERCY",
+//                             "firstName": "MICHELLE",
+//                             "fullName": "PERCY",
+//                             "gender": "MALE",
+//                             "hair": "",
+//                             "height": "73",
+//                             "id": "24476882",
+//                             "idType": "DL",
+//                             "issued": "2018-11-02",
+//                             "middleName": "MARIE",
+//                             "postalBox": null,
+//                             "state": "PA",
+//                             "issuedBy": "PA",
+//                             "template": "09",
+//                             "weight": "250",
+//                             "zip": "19141-0000"
+//                         },
+//                         "documentVerificationResult": {
+//                             "verificationConfidence": {
+//                                 "privateName": -1,
+//                                 "abbr3Country": -1,
+//                                 "abbrCountry": -1,
+//                                 "address": 16,
+//                                 "city": -1,
+//                                 "class": -1,
+//                                 "country": -1,
+//                                 "dob": 0,
+//                                 "expires": 0,
+//                                 "eyes": -1,
+//                                 "familyName": -1,
+//                                 "firstName": -1,
+//                                 "fullName": 0,
+//                                 "gender": -1,
+//                                 "hair": -1,
+//                                 "height": -1,
+//                                 "id": 0,
+//                                 "idType": -1,
+//                                 "issued": -1,
+//                                 "issuedBy": 0,
+//                                 "middleName": -1,
+//                                 "postalBox": -1,
+//                                 "state": 0,
+//                                 "template": -1,
+//                                 "weight": -1,
+//                                 "zip": 20,
+//                                 "ssn": -1
+//                             },
+//                             "validationTests": [
+//                                 {
+//                                     "values": [],
+//                                     "statusString": "Disabled",
+//                                     "effectString": "ScoringTheDocument",
+//                                     "status": -1,
+//                                     "rawResponse": null,
+//                                     "name": "DMVValidation",
+//                                     "displayName": "DMV",
+//                                     "reason": "Integration was turned off",
+//                                     "effect": 0
+//                                 },
+//                                 {
+//                                     "values": [],
+//                                     "statusString": "Disabled",
+//                                     "effectString": "ScoringTheDocument",
+//                                     "status": -1,
+//                                     "rawResponse": null,
+//                                     "name": "IdentiFraudValidation",
+//                                     "displayName": "IdentiFraud",
+//                                     "reason": "Integration was turned off",
+//                                     "effect": 0
+//                                 }
+//                             ],
+//                             "statusString": "Suspicious",
+//                             "status": 1,
+//                             "totalConfidence": 0
+//                         },
+//                         "request": {
+//                             "statusString": "Success",
+//                             "content": null,
+//                             "ocrVisual": true,
+//                             "verifyFace": true,
+//                             "created": "2023-06-19T06:36:29.3049141+00:00",
+//                             "documentType": 1,
+//                             "accountId": "4c3476c3-c434-4818-b43e-4d9c6d2fa5d7",
+//                             "accountName": "Med Prop Management",
+//                             "id": "e91d5c1b-72fc-486f-8ba4-8d6a0e6212d4",
+//                             "captureMethod": "000",
+//                             "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+//                             "userAgentFamily": "Chrome",
+//                             "userAgentVersion": "114.0.0",
+//                             "brand": "Other",
+//                             "deviceFamily": "Other",
+//                             "deviceModel": "Other",
+//                             "os": "Windows",
+//                             "osVersion": "10",
+//                             "webLibVersion": null,
+//                             "status": 1
+//                         },
+//                         "documentType": 1,
+//                         "requestId": "e91d5c1b-72fc-486f-8ba4-8d6a0e6212d4",
+//                         "ssn": null,
+//                         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+//                         "captureMethod": "000",
+//                         "facePhoto": "",
+//                         "facePhotoFromDocument": "",
+//                         "signature": "",
+//                         "faceVerificationResult": {
+//                             "far": 0.7625518,
+//                             "antiSpoofing": 98,
+//                             "confidence": 0,
+//                             "isAgeCheckSuccess": null,
+//                             "isGenderCheckSuccess": null
+//                         },
+//                         "parsedData": {
+//                             "isOcrSuccess": true,
+//                             "isPdf417Success": true,
+//                             "isMrzSuccess": null,
+//                             "isShuftiSuccess": null,
+//                             "isAntiSpoofingSuccess": null
+//                         },
+//                         "requestIpAddress": "122.176.57.163",
+//                         "geolocation": {
+//                             "continentCode": "AS",
+//                             "continent": "Asia",
+//                             "countryCode": "IN",
+//                             "country": "India",
+//                             "stateCode": "CH",
+//                             "state": "Chandigarh",
+//                             "city": "Chandigarh",
+//                             "postCode": "160009",
+//                             "accuracyRadius": 10,
+//                             "latitude": 30.7339,
+//                             "longitude": 76.7889,
+//                             "timeZone": "Asia/Kolkata",
+//                             "network": "122.176.57.0/24"
+//                         }
+//                     }
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "6490524ae7a7070a52b4cb12",
+//                 "userKey": "6490524a2d21febfe42b4afc",
+//                 "bookingID": 335270890,
+//                 "roomNumber": 2,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "200.0",
+//                 "discount": "0",
+//                 "roomTotal": "200.0",
+//                 "totalTax": "14.0",
+//                 "totalFees": "32.0",
+//                 "totalPrice": "246.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-19",
+//                 "checkInDate": "2023-06-22",
+//                 "checkOutDate": "2023-06-24",
+//                 "totalDays": 2,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6490524a2d21febfe42b4afc",
+//                     "emailAddress": "jyxe@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "46535",
+//                         "address1": "559 Cowley Boulevard",
+//                         "address2": "Mollitia praesentium",
+//                         "city": "Aliquip fuga Maxime",
+//                         "state": "Numquam molestiae id",
+//                         "country": "Japan",
+//                         "email": null
+//                     },
+//                     "country": "France",
+//                     "firstName": "Ishmael",
+//                     "lastName": "Frank",
+//                     "phoneNumber": "1231231232"
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64929deb7fee533cd0f8e535",
+//                 "userKey": "64929deba00cbfc795ef6e55",
+//                 "bookingID": 682593430,
+//                 "roomNumber": 4,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-21",
+//                 "checkInDate": "2023-06-21",
+//                 "checkOutDate": "2023-06-22",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7d1008f2b3841326bf1",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64929deba00cbfc795ef6e55",
+//                     "emailAddress": "zobuli@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "93263",
+//                         "address1": "90 West Hague Freeway",
+//                         "address2": "In autem reiciendis ",
+//                         "city": "Sapiente omnis est ",
+//                         "state": "Dolor repellendus M",
+//                         "country": "Uganda",
+//                         "email": "lobovidoc@mailinator.com"
+//                     },
+//                     "country": "Uganda",
+//                     "firstName": "Lee",
+//                     "lastName": "Santiago",
+//                     "phoneNumber": "+1 (783) 408-4086",
+//                     "scannedIdData": "{\"document\":{\"privateName\":\"MICHELLE MARIE\",\"abbr3Country\":\"USA\",\"abbrCountry\":null,\"address\":\"1622 W SPARKS ST\",\"city\":\"PHILADELPHIA\",\"class\":\"C\",\"country\":\"United States of America\",\"dob\":\"1971-03-23\",\"expires\":\"2022-03-23\",\"eyes\":\"BROWN\",\"familyName\":\"PERCY\",\"firstName\":\"MICHELLE\",\"fullName\":\"PERCY\",\"gender\":\"MALE\",\"hair\":\"\",\"height\":\"73\",\"id\":\"24476882\",\"idType\":\"DL\",\"issued\":\"2018-11-02\",\"middleName\":\"MARIE\",\"postalBox\":null,\"state\":\"PA\",\"issuedBy\":\"PA\",\"template\":\"09\",\"weight\":\"250\",\"zip\":\"19141-0000\"},\"documentVerificationResult\":{\"verificationConfidence\":{\"privateName\":-1,\"abbr3Country\":-1,\"abbrCountry\":-1,\"address\":16,\"city\":-1,\"class\":-1,\"country\":-1,\"dob\":0,\"expires\":0,\"eyes\":-1,\"familyName\":-1,\"firstName\":-1,\"fullName\":0,\"gender\":-1,\"hair\":-1,\"height\":-1,\"id\":0,\"idType\":-1,\"issued\":-1,\"issuedBy\":0,\"middleName\":-1,\"postalBox\":-1,\"state\":0,\"template\":-1,\"weight\":-1,\"zip\":20,\"ssn\":-1},\"validationTests\":[{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"DMVValidation\",\"displayName\":\"DMV\",\"reason\":\"Integration was turned off\",\"effect\":0},{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"IdentiFraudValidation\",\"displayName\":\"IdentiFraud\",\"reason\":\"Integration was turned off\",\"effect\":0}],\"statusString\":\"Suspicious\",\"status\":1,\"totalConfidence\":0},\"request\":{\"statusString\":\"Success\",\"content\":null,\"ocrVisual\":true,\"verifyFace\":true,\"created\":\"2023-06-21T06:51:07.7624851+00:00\",\"documentType\":1,\"accountId\":\"4c3476c3-c434-4818-b43e-4d9c6d2fa5d7\",\"accountName\":\"Med Prop Management\",\"id\":\"ca26965e-314e-4498-a415-76880f7c8ab2\",\"captureMethod\":\"000\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"userAgentFamily\":\"Chrome\",\"userAgentVersion\":\"114.0.0\",\"brand\":\"Other\",\"deviceFamily\":\"Other\",\"deviceModel\":\"Other\",\"os\":\"Windows\",\"osVersion\":\"10\",\"webLibVersion\":null,\"status\":1},\"documentType\":1,\"requestId\":\"ca26965e-314e-4498-a415-76880f7c8ab2\",\"ssn\":null,\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"captureMethod\":\"000\",\"facePhoto\":\"\",\"facePhotoFromDocument\":\"\",\"signature\":\"\",\"faceVerificationResult\":{\"far\":0.7625518,\"antiSpoofing\":98,\"confidence\":0,\"isAgeCheckSuccess\":null,\"isGenderCheckSuccess\":null},\"parsedData\":{\"isOcrSuccess\":true,\"isPdf417Success\":true,\"isMrzSuccess\":null,\"isShuftiSuccess\":null,\"isAntiSpoofingSuccess\":null},\"requestIpAddress\":\"122.176.57.163\",\"geolocation\":{\"continentCode\":\"AS\",\"continent\":\"Asia\",\"countryCode\":\"IN\",\"country\":\"India\",\"stateCode\":\"CH\",\"state\":\"Chandigarh\",\"city\":\"Chandigarh\",\"postCode\":\"160009\",\"accuracyRadius\":10,\"latitude\":30.7339,\"longitude\":76.7889,\"timeZone\":\"Asia/Kolkata\",\"network\":\"122.176.57.0/24\"}}"
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7d1008f2b3841326bf1",
+//                         "roomName": "Deluxe",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Deluxe Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d570ff01e264f6b9219a"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64958c3b134bcacfa29dcf66",
+//                 "userKey": "64958c3b3a9dddff58c83dea",
+//                 "bookingID": 425868187,
+//                 "roomNumber": 1,
+//                 "noOfRooms": 2,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "1200.0",
+//                 "discount": "0",
+//                 "roomTotal": "1200.0",
+//                 "totalTax": "84.0",
+//                 "totalFees": "192.0",
+//                 "totalPrice": "1476.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-23",
+//                 "checkInDate": "2023-06-24",
+//                 "checkOutDate": "2023-06-30",
+//                 "totalDays": 6,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "645b349ac7a781a9309aace4",
+//                         "noOfRooms": 2
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64958c3b3a9dddff58c83dea",
+//                     "emailAddress": "ryqanum@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "41434",
+//                         "address1": "40 South Old Freeway",
+//                         "address2": "Non enim quo ut volu",
+//                         "city": "Amet est nostrum li",
+//                         "state": "Et quis necessitatib",
+//                         "country": "Micronesia",
+//                         "email": null
+//                     },
+//                     "country": "Bahrain",
+//                     "firstName": "Reagan",
+//                     "lastName": "Blanchard",
+//                     "phoneNumber": "1231231231",
+//                     "scannedIdData": ""
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "645b349ac7a781a9309aace4",
+//                         "roomName": "Twin",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Twin Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d560ff01e264f6b92199"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64958c5e93dc9466f40d41d4",
+//                 "userKey": "64958c3b3a9dddff58c83dea",
+//                 "bookingID": 353728501,
+//                 "roomNumber": 1,
+//                 "noOfRooms": 2,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "1200.0",
+//                 "discount": "0",
+//                 "roomTotal": "1200.0",
+//                 "totalTax": "84.0",
+//                 "totalFees": "192.0",
+//                 "totalPrice": "1476.0",
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-23",
+//                 "checkInDate": "2023-06-24",
+//                 "checkOutDate": "2023-06-30",
+//                 "totalDays": 6,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "645b349ac7a781a9309aace4",
+//                         "noOfRooms": 2
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64958c3b3a9dddff58c83dea",
+//                     "emailAddress": "ryqanum@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "41434",
+//                         "address1": "40 South Old Freeway",
+//                         "address2": "Non enim quo ut volu",
+//                         "city": "Amet est nostrum li",
+//                         "state": "Et quis necessitatib",
+//                         "country": "Micronesia",
+//                         "email": null
+//                     },
+//                     "country": "Bahrain",
+//                     "firstName": "Reagan",
+//                     "lastName": "Blanchard",
+//                     "phoneNumber": "1231231231",
+//                     "scannedIdData": ""
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "645b349ac7a781a9309aace4",
+//                         "roomName": "Twin",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Twin Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d560ff01e264f6b92199"
+//                     }
+//                 ]
+//             },
+            
+//             {
+//                 "_id": "64991ecdfcad61162e6f9c8a",
+//                 "userKey": "64991eca66b0fea3614edddf",
+//                 "bookingID": 698120801,
+//                 "roomNumber": 3,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-26",
+//                 "checkInDate": "2023-06-26",
+//                 "checkOutDate": "2023-06-27",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d75967008f2b3841326be8",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64991eca66b0fea3614edddf",
+//                     "emailAddress": "lehyv@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "48677",
+//                         "address1": "664 North Milton Court",
+//                         "address2": "Doloribus esse est ",
+//                         "city": "Dolor ipsum laudant",
+//                         "state": "Similique id illo n",
+//                         "country": "Liechtenstein",
+//                         "email": "pevu@mailinator.com"
+//                     },
+//                     "country": "Liechtenstein",
+//                     "firstName": "Rahim",
+//                     "lastName": "Dillard",
+//                     "phoneNumber": "1231231231",
+//                     "scannedIdData": {}
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d75967008f2b3841326be8",
+//                         "roomName": "Double Non Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Non Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402fc2bff01e264f6b921b8"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64992174fcad61162e6f9c8b",
+//                 "userKey": "6499217166b0fea36153bc6c",
+//                 "bookingID": 833336981,
+//                 "roomNumber": 5,
+//                 "noOfRooms": 17,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 1700,
+//                 "totalTax": 242.85714285714286,
+//                 "totalFees": 170,
+//                 "totalPrice": 2112.857142857143,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-26",
+//                 "checkInDate": "2023-06-26",
+//                 "checkOutDate": "2023-06-27",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "645b349ac7a781a9309aace4",
+//                         "noOfRooms": 17
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "6499217166b0fea36153bc6c",
+//                     "emailAddress": "walakuwyza@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "92050",
+//                         "address1": "550 Second Street",
+//                         "address2": "Mollit ipsa ut dolo",
+//                         "city": "Pariatur Officia du",
+//                         "state": "Laborum deleniti dig",
+//                         "country": "Finland",
+//                         "email": "tasakav@mailinator.com"
+//                     },
+//                     "country": "Finland",
+//                     "firstName": "Candace",
+//                     "lastName": "Buck",
+//                     "phoneNumber": "+1 (341) 215-4398",
+//                     "scannedIdData": "{\"document\":{\"privateName\":\"MICHELLE MARIE\",\"abbr3Country\":\"USA\",\"abbrCountry\":null,\"address\":\"1622 W SPARKS ST\",\"city\":\"PHILADELPHIA\",\"class\":\"C\",\"country\":\"United States of America\",\"dob\":\"1971-03-23\",\"expires\":\"2022-03-23\",\"eyes\":\"BROWN\",\"familyName\":\"PERCY\",\"firstName\":\"MICHELLE\",\"fullName\":\"PERCY\",\"gender\":\"MALE\",\"hair\":\"\",\"height\":\"73\",\"id\":\"24476882\",\"idType\":\"DL\",\"issued\":\"2018-11-02\",\"middleName\":\"MARIE\",\"postalBox\":null,\"state\":\"PA\",\"issuedBy\":\"PA\",\"template\":\"09\",\"weight\":\"250\",\"zip\":\"19141-0000\"},\"documentVerificationResult\":{\"verificationConfidence\":{\"privateName\":-1,\"abbr3Country\":-1,\"abbrCountry\":-1,\"address\":16,\"city\":-1,\"class\":-1,\"country\":-1,\"dob\":0,\"expires\":0,\"eyes\":-1,\"familyName\":-1,\"firstName\":-1,\"fullName\":0,\"gender\":-1,\"hair\":-1,\"height\":-1,\"id\":0,\"idType\":-1,\"issued\":-1,\"issuedBy\":0,\"middleName\":-1,\"postalBox\":-1,\"state\":0,\"template\":-1,\"weight\":-1,\"zip\":20,\"ssn\":-1},\"validationTests\":[{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"DMVValidation\",\"displayName\":\"DMV\",\"reason\":\"Integration was turned off\",\"effect\":0},{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"IdentiFraudValidation\",\"displayName\":\"IdentiFraud\",\"reason\":\"Integration was turned off\",\"effect\":0}],\"statusString\":\"Suspicious\",\"status\":1,\"totalConfidence\":0},\"request\":{\"statusString\":\"Success\",\"content\":null,\"ocrVisual\":true,\"verifyFace\":true,\"created\":\"2023-06-26T05:25:10.1532992+00:00\",\"documentType\":1,\"accountId\":\"4c3476c3-c434-4818-b43e-4d9c6d2fa5d7\",\"accountName\":\"Med Prop Management\",\"id\":\"8df6c942-ec40-4e48-a9fb-0c0ead6f6c19\",\"captureMethod\":\"000\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"userAgentFamily\":\"Chrome\",\"userAgentVersion\":\"114.0.0\",\"brand\":\"Other\",\"deviceFamily\":\"Other\",\"deviceModel\":\"Other\",\"os\":\"Windows\",\"osVersion\":\"10\",\"webLibVersion\":null,\"status\":1},\"documentType\":1,\"requestId\":\"8df6c942-ec40-4e48-a9fb-0c0ead6f6c19\",\"ssn\":null,\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"captureMethod\":\"000\",\"facePhoto\":\"\",\"facePhotoFromDocument\":\"\",\"signature\":\"\",\"faceVerificationResult\":{\"far\":0.7625518,\"antiSpoofing\":98,\"confidence\":0,\"isAgeCheckSuccess\":null,\"isGenderCheckSuccess\":null},\"parsedData\":{\"isOcrSuccess\":true,\"isPdf417Success\":true,\"isMrzSuccess\":null,\"isShuftiSuccess\":null,\"isAntiSpoofingSuccess\":null},\"requestIpAddress\":\"122.176.57.163\",\"geolocation\":{\"continentCode\":\"AS\",\"continent\":\"Asia\",\"countryCode\":\"IN\",\"country\":\"India\",\"stateCode\":\"CH\",\"state\":\"Chandigarh\",\"city\":\"Chandigarh\",\"postCode\":\"160009\",\"accuracyRadius\":10,\"latitude\":30.7339,\"longitude\":76.7889,\"timeZone\":\"Asia/Kolkata\",\"network\":\"122.176.57.0/24\"}}"
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "645b349ac7a781a9309aace4",
+//                         "roomName": "Twin",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 4,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Twin Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d560ff01e264f6b92199"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "649ac6cdb5cc788e3f93e7db",
+//                 "userKey": "649ac6cc6a9ac1bfd1bb8284",
+//                 "bookingID": 418496998,
+//                 "roomNumber": 6,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-06-27",
+//                 "checkInDate": "2023-06-27",
+//                 "checkOutDate": "2023-06-28",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "649ac6cc6a9ac1bfd1bb8284",
+//                     "emailAddress": "solotag@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "16351",
+//                         "address1": "773 Hague Court",
+//                         "address2": "Quia perspiciatis e",
+//                         "city": "Id consequatur quia ",
+//                         "state": "In quo aute facere e",
+//                         "country": "Aland Islands",
+//                         "email": "ralelym@mailinator.com"
+//                     },
+//                     "country": "Aland Islands",
+//                     "firstName": "Yoshi",
+//                     "lastName": "Joyner",
+//                     "phoneNumber": "+1 (505) 695-6129",
+//                     "scannedIdData": "{\"document\":{\"privateName\":\"MICHELLE MARIE\",\"abbr3Country\":\"USA\",\"abbrCountry\":null,\"address\":\"1622 W SPARKS ST\",\"city\":\"PHILADELPHIA\",\"class\":\"C\",\"country\":\"United States of America\",\"dob\":\"1971-03-23\",\"expires\":\"2022-03-23\",\"eyes\":\"BROWN\",\"familyName\":\"PERCY\",\"firstName\":\"MICHELLE\",\"fullName\":\"PERCY\",\"gender\":\"MALE\",\"hair\":\"\",\"height\":\"73\",\"id\":\"24476882\",\"idType\":\"DL\",\"issued\":\"2018-11-02\",\"middleName\":\"MARIE\",\"postalBox\":null,\"state\":\"PA\",\"issuedBy\":\"PA\",\"template\":\"09\",\"weight\":\"250\",\"zip\":\"19141-0000\"},\"documentVerificationResult\":{\"verificationConfidence\":{\"privateName\":-1,\"abbr3Country\":-1,\"abbrCountry\":-1,\"address\":16,\"city\":-1,\"class\":-1,\"country\":-1,\"dob\":0,\"expires\":0,\"eyes\":-1,\"familyName\":-1,\"firstName\":-1,\"fullName\":0,\"gender\":-1,\"hair\":-1,\"height\":-1,\"id\":0,\"idType\":-1,\"issued\":-1,\"issuedBy\":0,\"middleName\":-1,\"postalBox\":-1,\"state\":0,\"template\":-1,\"weight\":-1,\"zip\":20,\"ssn\":-1},\"validationTests\":[{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"DMVValidation\",\"displayName\":\"DMV\",\"reason\":\"Integration was turned off\",\"effect\":0},{\"values\":[],\"statusString\":\"Disabled\",\"effectString\":\"ScoringTheDocument\",\"status\":-1,\"rawResponse\":null,\"name\":\"IdentiFraudValidation\",\"displayName\":\"IdentiFraud\",\"reason\":\"Integration was turned off\",\"effect\":0}],\"statusString\":\"Suspicious\",\"status\":1,\"totalConfidence\":0},\"request\":{\"statusString\":\"Success\",\"content\":null,\"ocrVisual\":true,\"verifyFace\":true,\"created\":\"2023-06-27T11:23:04.1579078+00:00\",\"documentType\":1,\"accountId\":\"4c3476c3-c434-4818-b43e-4d9c6d2fa5d7\",\"accountName\":\"Med Prop Management\",\"id\":\"f2336dc1-7442-4d09-ae10-6613c721877b\",\"captureMethod\":\"000\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"userAgentFamily\":\"Chrome\",\"userAgentVersion\":\"114.0.0\",\"brand\":\"Other\",\"deviceFamily\":\"Other\",\"deviceModel\":\"Other\",\"os\":\"Windows\",\"osVersion\":\"10\",\"webLibVersion\":null,\"status\":1},\"documentType\":1,\"requestId\":\"f2336dc1-7442-4d09-ae10-6613c721877b\",\"ssn\":null,\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\",\"captureMethod\":\"000\",\"facePhoto\":\"\",\"facePhotoFromDocument\":\"\",\"signature\":\"\",\"faceVerificationResult\":{\"far\":0.7625518,\"antiSpoofing\":98,\"confidence\":0,\"isAgeCheckSuccess\":null,\"isGenderCheckSuccess\":null},\"parsedData\":{\"isOcrSuccess\":true,\"isPdf417Success\":true,\"isMrzSuccess\":null,\"isShuftiSuccess\":null,\"isAntiSpoofingSuccess\":null},\"requestIpAddress\":\"122.176.57.163\",\"geolocation\":{\"continentCode\":\"AS\",\"continent\":\"Asia\",\"countryCode\":\"IN\",\"country\":\"India\",\"stateCode\":\"CH\",\"state\":\"Chandigarh\",\"city\":\"Chandigarh\",\"postCode\":\"160009\",\"accuracyRadius\":10,\"latitude\":30.7339,\"longitude\":76.7889,\"timeZone\":\"Asia/Kolkata\",\"network\":\"122.176.57.0/24\"}}"
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "_id": "64a3c24cd6e26366faa11b4d",
+//                 "userKey": "64a3c24c1d8098f9c1b4c79c",
+//                 "bookingID": 253341785,
+//                 "roomNumber": 1,
+//                 "noOfRooms": 1,
+//                 "noOfPerson": 1,
+//                 "noOfAdults": 1,
+//                 "noOfChildren": 0,
+//                 "fairPrice": "",
+//                 "discount": "0",
+//                 "roomTotal": 100,
+//                 "totalTax": 14.285714285714286,
+//                 "totalFees": 10,
+//                 "totalPrice": 124.28571428571429,
+//                 "bookingStatus": "confirmed",
+//                 "paymentStatus": "pending",
+//                 "bookingDate": "2023-07-04",
+//                 "checkInDate": "2023-07-04",
+//                 "checkOutDate": "2023-07-05",
+//                 "totalDays": 1,
+//                 "isWalkIn": true,
+//                 "additionalGuest": {
+//                     "firstName": "",
+//                     "lastName": "",
+//                     "emailAddress": "",
+//                     "phoneNumber": "",
+//                     "country": ""
+//                 },
+//                 "roomKeys": [
+//                     {
+//                         "id": "63d7b7c1008f2b3841326bef",
+//                         "noOfRooms": 1
+//                     }
+//                 ],
+//                 "userInfo": {
+//                     "_id": "64a3c24c1d8098f9c1b4c79c",
+//                     "emailAddress": "xori@mailinator.com",
+//                     "billingAddress": {
+//                         "zipcode": "92177",
+//                         "address1": "12 White Milton Road",
+//                         "address2": "Repudiandae molestia",
+//                         "city": "Exercitation sunt qu",
+//                         "state": "Id temporibus lorem",
+//                         "country": "Czech Republic",
+//                         "email": "tonoseqij@mailinator.com"
+//                     },
+//                     "country": "Czech Republic",
+//                     "firstName": "Craig",
+//                     "lastName": "Mcconnell",
+//                     "phoneNumber": "+1 (151) 155-7702",
+//                     "scannedIdData": {}
+//                 },
+//                 "roomsInfo": [
+//                     {
+//                         "_id": "63d7b7c1008f2b3841326bef",
+//                         "roomName": "Double Smoking",
+//                         "minimumNightStays": 1,
+//                         "maximumOccupancy": 2,
+//                         "pricePerNight": 100,
+//                         "totalNumberOfRooms": 50,
+//                         "description": "Double Smoking Room",
+//                         "amenities": [
+//                             "Coffee maker",
+//                             "Cable television"
+//                         ],
+//                         "images": [
+//                             {
+//                                 "imageKey": "1",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "2",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             },
+//                             {
+//                                 "imageKey": "3",
+//                                 "imagePath": "/assets/images/pool_thumb__633f0eaaf2ce1.jpg"
+//                             }
+//                         ],
+//                         "totalNumberOfBookedRooms": 0,
+//                         "totalNOfRooms": 0,
+//                         "iconName": "true",
+//                         "propertyKey": "63d9125fc39a91dcdee606bd",
+//                         "roomType": "6402d514ff01e264f6b92198"
+//                     }
+//                 ]
+//             }
+//         ]
+// }
+// // export const AddEmployeeModalEmpty = Template.bind({});
+// // AddEmployeeModalEmpty.args = {
+// //     storyBookProps: {
+// //         isAddEmployeeOpen: true
+// //     }
+// // }
+
+// // export const AddEmployeeModalFilled = Template.bind({});
+// // AddEmployeeModalFilled.args = {
+// //     storyBookProps: {
+// //         isAddEmployeeOpen: true,
+// //         storydata: {
+// //             name: "employee6",
+// //             age: 30,
+// //             gender: "female",
+// //             job: "Administrator",
+// //             Dateofhiring: '2023-07-19'
+// //         }
+// //     }
+// // }
+
+// // export const AddEmployeeModalEmptySubmit = Template.bind({});
+// // AddEmployeeModalEmptySubmit.args = {
+// //     storyBookProps: {
+// //         isAddEmployeeOpen: true,
+// //         addemployeeEmptySubmit: true
+// //     }
+// // }
+
+// // export const AddedEmployeeSuccess = Template.bind({});
+// // AddedEmployeeSuccess.args = {
+// //     storyBookProps: {
+// //         emptytable: true,
+// //         showEmptydata2: true
+// //     }
+// // }
+
+// // export const SaveSchedule = Template.bind({});
+// // SaveSchedule.args = {
+// //     storyBookProps: {
+// //         SaveSchedulebuttonClicked: true,
+// //         emptytable: true,
+// //         showEmptydata2: true
+// //     }
+// // }
+
+// // export const NextWeekClicked = Template.bind({});
+// // NextWeekClicked.args = {
+// //     storyBookProps: {
+// //         emptytable: true,
+// //         shownextWeekcolumns: true
+// //     }
+// // }
+
+// // export const PreviousWeekClicked = Template.bind({});
+// // PreviousWeekClicked.args = {
+// //     storyBookProps: {
+// //         emptytable: true,
+// //         showpreviousWeekcolumns: true,
+// //     }
+// // }
+
+// // export const PlusClickedofLastRowLastColumnShiftManagerOpen = Template.bind({});
+// // PlusClickedofLastRowLastColumnShiftManagerOpen.args = {
+// //     storyBookProps: {
+// //         showAddWork: true
+// //     }
+// // }
+
+// // export const ShiftManagerSaveClickedWithEmptyFields = Template.bind({});
+// // ShiftManagerSaveClickedWithEmptyFields.args = {
+// //     storyBookProps: {
+// //         showAddWork: true,
+// //         shiftManagerModalSaveClickedWithEmptyField: true
+// //     }
+// // }
+
+// // export const ShiftManagerModalWithFieldsFilled = Template.bind({});
+// // ShiftManagerModalWithFieldsFilled.args = {
+// //     storyBookProps: {
+// //         showAddWork: true,
+// //         shouldShiftModalInputsBeFilled: true,
+// //         shiftModalProps: {
+// //             work: "NewworkAdded",
+// //             startTime: "09:00",
+// //             endTime: "18:00"
+// //         }
+// //     }
+// // }
+
+// // export const ShiftManagerSaveButtonClicked = Template.bind({});
+// // ShiftManagerSaveButtonClicked.args = {
+// //     storyBookProps: {
+// //         showOnlyOneTableData: true,
+// //         emptytable: true,
+// //         dataProps: {
+// //             startTime: "09:00",
+// //             endTime: "18:00",
+// //             work: "NewworkAdded",
+// //         }
+// //     }
+// // }
+
+// // export const EditIconClicked = Template.bind({});
+// // EditIconClicked.args = {
+// //     storyBookProps: {
+// //         showAddWork: true,
+// //         shouldShiftModalInputsBeFilled: true,
+// //         shiftModalProps: {
+// //             work: "NewworkAdded",
+// //             startTime: "09:00",
+// //             endTime: "18:00"
+// //         }
+// //     }
+// // }
+
+// // export const EditIconClickedAndInputsChanged = Template.bind({});
+// // EditIconClickedAndInputsChanged.args = {
+// //     storyBookProps: {
+// //         showAddWork: true,
+// //         shouldShiftModalInputsBeFilled: true,
+// //         shiftModalProps: {
+// //             work: "ChangedWork",
+// //             startTime: "06:00",
+// //             endTime: "15:00"
+// //         }
+// //     }
+// // }
+
+// // export const SaveButtonClicked = Template.bind({});
+// // SaveButtonClicked.args = {
+// //     storyBookProps: {
+// //         // showAddWork: true,
+// //         // shouldShiftModalInputsBeFilled: true,
+// //         showOnlyOneTableData: true,
+// //         emptytable: true,
+// //         dataProps: {
+// //             work: "ChangedWork",
+// //             startTime: "06:00",
+// //             endTime: "15:00"
+// //         }
+// //     }
+// // }
+// // export const DeleteIconClicked = Template.bind({});
+// // DeleteIconClicked.args = {
+// //     storyBookProps: {
+// //         emptytable: true,
+// //         showOnlyOneTableData: true,
+// //         dataProps: "+"
+// //     }
+// // }
+
+// // export const EmployeeNameClickedName_employee1 = Template.bind({});
+// // EmployeeNameClickedName_employee1.args = {
+// //     storyBookProps: {
+// //         employeeFolioOpen: true,
+// //         employeeData: [{
+// //             name: "geremy winston",
+// //             age: "66",
+// //             job: "machinary",
+// //             gender: "male",
+// //             datehired: "23-March-2021"
+// //         }],
+// //         Previousreservations:
+// //             [
+// //                 [
+// //                     "7/2/2023",
+// //                     {
+// //                         startTime: "11:00",
+// //                         endTime: "08:00",
+// //                         work: "Shopping"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "7/1/2023",
+// //                     "+"
+// //                 ],
+// //                 [
+// //                     "6/30/2023",
+// //                     {
+// //                         startTime: "08:00",
+// //                         endTime: "06:00",
+// //                         work: "Maintenance"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/29/2023",
+// //                     "+"
+// //                 ],
+// //                 [
+// //                     "6/28/2023",
+// //                     {
+// //                         startTime: "09:00",
+// //                         endTime: "06:00",
+// //                         work: "Cooking"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/27/2023",
+// //                     {
+// //                         "startTime": "21:23",
+// //                         "endTime": "19:19",
+// //                         "work": "Sunt dolorem vero ad"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/26/2023",
+// //                     {
+// //                         startTime: "10:00",
+// //                         endTime: "07:00",
+// //                         work: "Security"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/25/2023",
+// //                     "+"
+// //                 ],
+// //                 [
+// //                     "6/24/2023",
+// //                     {
+// //                         startTime: "09:00",
+// //                         endTime: "06:00",
+// //                         work: "Management"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/23/2023",
+// //                     "+"
+// //                 ],
+// //                 [
+// //                     "6/22/2023",
+// //                     {
+// //                         startTime: "09:00",
+// //                         endTime: "06:00",
+// //                         work: "Management"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/21/2023",
+// //                     "+"
+// //                 ],
+// //                 [
+// //                     "6/20/2023",
+// //                     {
+// //                         startTime: "10:00",
+// //                         endTime: "07:00",
+// //                         work: "Security"
+// //                     }
+// //                 ],
+// //                 [
+// //                     "6/19/2023",
+// //                     "+"
+// //                 ]
+// //             ]
+// //     }
+// // }
+
+// mockAdapter.onGet(`${process.env.REACT_APP_API_URL}/admin/getAllBookings`).reply(config => {
+
+//     let responseData = mockdata;
+
+//     // if (window.location.href.split("id=")[1].includes("delete-modal-delete-button-clicked-and-test-plan-deleted")) {
+//     //     responseData = deleteButtonClickedMockData;
+
+//     // } else if (window.location.href.split("id=")[1].includes("name-weekly-2-clicked")) {
+//     //     responseData = deleteButtonClickedMockData;
+//     // } else if (window.location.href.split("id=")[1].includes("changed-data-reflected-in-page")) {
+//     //     responseData = deleteButtonClickedMockDataWithChangedWeekly2;
+//     // }
+//     // else {
+//     //     responseData = mockData;
+//     // }
+
+//     return [200, responseData];
+// }, { mode: 'no-cors' });
+
+// export default meta;

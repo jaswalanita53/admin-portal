@@ -1,0 +1,33 @@
+.firstLine{
+    display: flex !important;
+    flex-wrap:wrap !important;
+    justify-content: space-between !important;
+    gap:20px;
+}
+
+.searchbutton {
+    font-size: 12.5px !important;
+    gap: 5px !important;
+}
+
+.secondLine {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-end;
+    row-gap: 15px !important;
+}
+
+.searchcard{
+    max-width: 50% !important;
+}
+
+.samewidth {
+    flex:15% !important;
+    min-width: 175px !important;
+}
+
+@media screen and (max-width: 576px) {
+    .searchcard{
+        max-width: unset !important
+    }
+}

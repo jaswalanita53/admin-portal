@@ -1,0 +1,120 @@
+.firstline {
+    display: flex !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 20px;
+}
+
+.navItems{
+    list-style: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navItems:hover{
+    color:gray;
+}
+
+.firstline .secondchild {
+    display: flex !important;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cardsparent {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.row1 {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
+}
+
+.printParent{
+    flex: 1;
+    justify-content: right;
+    display: flex;
+}
+
+.inner{
+    flex:49%;
+    width: 100%;
+}
+
+@media screen and (max-width:990px) {
+    .cardsparent {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .secondchild {
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .button {
+       /* font-size: 10px !important; */
+       width: 50%;
+    }
+    .secondchild {
+        gap: 10px !important;
+    }
+    .row1{
+        overflow: auto;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dateparent {
+        display: flex;
+        align-items: center;
+    }
+    .date{
+        font-size: 25px !important;
+        font-weight: bold;
+    }
+    .secondchild {
+        gap: 5px;
+        flex-direction: column;
+        row-gap: 20px !important;
+    }
+    .button{
+        width: 100%;
+        margin-left: 0px !important;
+        height: 40px !important;
+        font-size: 12px !important;
+        text-align: left !important;
+    }
+
+    .firstline{
+        padding: 20px 0 !important;
+        row-gap: 20px;
+    }
+
+    .secondLine{
+        padding: 20px 0 !important;
+      
+    }
+    
+        .smallButton{
+            width: fit-content;
+        }
+    
+}
+
+@media screen and (max-width:340px){
+    .date{
+        font-size: 18px !important;
+        font-weight: bold;
+    }
+    .firstline{
+        column-gap: 10px;
+    }
+}

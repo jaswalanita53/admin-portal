@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.css-otekz8:hover, .css-otekz8[data-hover] {
+    background: #edf2f700 !important;
+}
+ .chakra-collapse{
+    /* width: 400px !important;
+    margin-top: 8px;
+    overflow: scroll !important;
+    display: block;
+    opacity: 1;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    min-height: 88.5vh;
+    top: 64px;
+    max-height: 88.5vh; */
+}
+.css-1zts0j {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.chakra-stack.toggle-tooltip-after.css-z5cv54::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 12px;
+    left: -18px;
+    z-index: -1;
+    border-style: solid;
+    border-width: 18px 22px 18px 0;
+    border-color: transparent #fff transparent transparent;
+    filter: drop-shadow(-8px 3px 6px rgba(0,0,0,.16));
+    -webkit-filter: drop-shadow(-8px 3px 6px rgba(0,0,0,.16));
+}
+tr.bgx-search-availability-box-table-row.css-0 td {
+    font-size: 12px;
+    padding: 14px;
+}
+tr.bgx-search-availability-box-table-row.css-0{
+    border-bottom: 1px solid #e5e5e5
+}
+.wrapper-main{height: calc(100vh - 60px);background-color: #ecf2f9;}
+
+.baserate-table thead {
+    background: #f2f2f2;
+}
+
+.baserate-table th {
+    padding: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    color: rgb(74, 85, 104);
+    font-size: small;
+    line-height: 30px;
+}
+
+.baserate-table td {
+    padding: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    color: rgb(74, 85, 104);
+    font-size: small;
+    /* line-height: 31px; */
+}
+.wrapper-main .css-52dxnr[aria-selected=true], .css-52dxnr[data-selected] {
+    color: #3366ff;
+    border-bottom: 3px solid;
+}
+.wrapper-main .chakra-tabs__tablist button {
+    font-size: 14px;
+    font-weight: 600;
+}
+.dataloading {
+    position: relative;
+    z-index: 9;
+    display: flex;justify-content: center;
+}
+.addloading{
+    position: relative;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    transform: scale(0.6) ;
+    -webkit-transform: scale(0.6) ;
+    -moz-transform: scale(0.6) ;
+    -ms-transform: scale(0.6) ;
+    -o-transform: scale(0.6) ;
+}
+
+.deletloading {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    justify-content: flex-start;
+    transform: scale(0.3) ;
+    width: 15px;
+    left: -5px;
+    -webkit-transform: scale(0.3) ;
+    -moz-transform: scale(0.3) ;
+    -ms-transform: scale(0.3) ;
+    -o-transform: scale(0.3) ;
+}
+
+.custom-tab {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, transform 0.3s ease;
+    -moz-transition: background-color 0.3s ease, transform 0.3s ease;
+    -ms-transition: background-color 0.3s ease, transform 0.3s ease;
+    -o-transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-tab:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    transform: translateY(-3px);
+  }
+
+  .stayOverTodayTable table thead {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+
+.stayOverTodayTable {margin-top: 2px;}
+
+.stayOverBookingTable table thead {
+    position: sticky;
+    top: 58px;
+    background: #fff;
+    z-index: 1;
+}
+
+.stayOverInHouseTable table thead {
+    position: sticky;
+    top: 58px;
+    background: #fff;
+    z-index: 1;
+}
+/* .stayOverBookingTable {margin-top: 2px;} */

@@ -1,0 +1,45 @@
+.weeks {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    flex-direction: row !important;
+}
+.checks{
+    margin: 0 !important;
+}
+/* @media screen and (max-width:650px){ */
+       .modal{
+        opacity: 1;
+        transform: none;
+        margin: 100px 10px;
+        overflow: auto;
+        max-height: 80vh;
+        display: flex;
+    }
+/* } */
+
+@media screen and (max-width:576px) {
+    .closeButton {
+        width: 50%;
+    }
+    .saveButton{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:414px) {
+    .buttonDiv{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .closeButton {
+        width: 100%;
+        padding: 20px;
+        margin-right: 0 !important;
+    }
+    .saveButton{
+        width: 100%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.circle {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background-color: #ccc;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.stepWrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.stepBlock {
+  display: flex;
+  align-items: center;
+}
+
+.stepBlock .circleWrapper {
+  padding: 0px 16px;
+  position: relative;
+}
+
+.selected .circle {
+  color: #fff;
+  background-color: #3366ff;
+  border-color: #3366ff;
+}
+
+.selected.stepWizardText {
+  color: #3366ff;
+}
+
+.stepBlock:not(:last-child)>.circleWrapper::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  background-color: #3366ff;
+  margin: auto;
+  z-index: -1;
+}
+
+.stepWizardText {
+  font-size: 12px;
+}
+
+.stepBlock:not(:last-child)>.circleWrapper::after {
+  height: 3px;
+}
+
+.stepBlock:not(:last-child).selected>.circleWrapper::after,
+.stepBlock:not(:last-child).selected~.stepBlock:not(:last-child)>.circleWrapper::after {
+  height: 2px;
+  opacity: 0.6;
+}
+
+.primaryButton {
+  padding: 10px 25px;
+  background-color: #3366ff;
+  border: none;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primaryButton:disabled {
+  opacity: 0.5;
+}
+
+.relative {
+  position: relative;
+}
+
+tr.bgx-search-availability-box-table-row.css-0 td {
+  font-size: 12px;
+  padding: 14px;
+}
+
+tr.bgx-search-availability-box-table-row.css-0 {
+  border-bottom: 1px solid #e5e5e5
+}
+
+.mt0 {
+  margin-top: 0px !important;
+}
+
+.absolute {
+  position: absolute;
+}
+
+ul.baseRate li {
+  border-right: 1px solid #ccc;
+  margin-right: 8px;
+  padding-right: 9px;
+}
+ul.baseRate{
+  display: flex;
+}
+ul.baseRate li span{
+ display: block;
+}

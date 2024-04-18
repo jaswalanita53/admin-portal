@@ -1,0 +1,178 @@
+.active {
+    background: black;
+    color: white;
+}
+ .parent, .parent1 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 80px 40px 0px !important;
+    justify-content: space-between !important;
+    gap: 30px 20px !important;
+}
+.leftmenusmall{
+    display: none;
+}
+.leftmenusmallshow{
+    display: none;
+}
+.parent {
+    margin: 30px 40px 30px !important;
+}
+.parent1childmain{
+    flex-wrap: wrap;
+    gap: 20px 10px;
+}
+
+.child {
+    flex:48% !important;
+    min-width:400px !important;
+}
+
+.thirdParent  {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 10px 40px 60px !important;
+    gap: 30px 40px !important;
+}
+
+.secondParent {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.secondchild  {
+    min-width: 260px !important;
+    max-width: 260px;
+}
+
+.createNew{
+    /* flex: 30% 1 !important; */
+    /* min-width: 280px !important; */
+    max-width: 280px !important;
+        display: flex;
+            gap: 20px;
+            min-width: 450px !important;
+            justify-content: space-between;
+}
+
+.heading {
+    margin: 0 60px 30px;
+}
+.createNewchild{
+        display: flex !important;
+            flex-direction: row !important;
+            justify-content: left;
+            gap: 20px;
+}
+
+@media screen and (max-width:800px){
+    .parent1{
+        margin: 80px 30px 0px !important;
+        gap: 30px 20px !important;
+    }
+    .parent{
+        margin: 30px 30px 30px !important;
+    }
+    .thirdParent{
+        margin: 10px 30px 60px !important;
+        gap: 30px 20px !important;
+    }
+
+    .secondParent{
+        display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 30px 20px !important;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .secondchild{
+            min-width: 250px !important;
+            max-width: 250px;
+    }
+}
+
+@media screen and (max-width:667px){
+    .parentofchilds{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+@media screen and (max-width:576px){
+.child {
+    flex:100% !important;
+    width: 100%;
+    min-width:unset !important;
+}
+.ul{
+    background: white;
+    display: none;
+}
+.leftmenusmallshow{
+    position: absolute;
+    display: unset;
+    top: 57px;
+    background: white;
+}
+
+.leftmenusmallshow ul{
+    background: white;
+    display: unset;
+    border-right: 0.5px solid rgb(211, 210, 210);
+    border-radius: 6px;
+}
+.second {
+ width: 100vw;
+}
+.leftmenu{
+  display: none;
+}
+.leftmenu1{
+    position: absolute;
+    top: 57px;
+}
+.leftmenusmall{
+    display: block;
+}
+.secondchild  {
+    min-width: 250px !important;
+    max-width: 250px;
+}
+
+.createNew{
+    min-width: 250px !important;
+    max-width: 250px!important;
+    flex-direction: column;
+}
+   .parent{
+        margin: 30px 30px 30px !important;
+    }
+    .thirdParent{
+        margin: 10px 30px 60px !important;
+        gap: 30px 20px !important;
+    }
+
+    .margintop0{
+        margin-top: 0 !important;
+    }
+    .flexrow{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around;
+    }
+}
+
+
+@media screen and (max-width: 414px){
+    .secondchild  {
+        min-width: 250px !important;
+        max-width: 100%;
+    }
+    .createNew{
+        min-width: 250px !important;
+        max-width: 100%!important;
+    }
+    .data{
+        font-size: 13px;
+    }
+}

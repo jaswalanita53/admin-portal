@@ -1,0 +1,115 @@
+.Header_headerSearchContainer__C-KsG, .Header_headerSearchContainerright__U8iXK {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important
+}
+.Header_headerSearchContainerInput__HvU9N {
+    border-radius: 30px !important;
+    padding: 20px 40px !important
+}
+
+.Header_rightAccordianDrawerStyle__91FdX {
+    display: block;
+    opacity: 1;
+    position: absolute;
+    right: 0px;
+    width: 200px;
+    box-shadow: 0px 4px 30px rgb(81 55 238 / 8%);
+    top: 60px;
+    background: rgb(255, 255, 255);
+    z-index: 1000000;
+    padding: 10px 0 !important;
+    border: 1px solid #e2e8f0;
+}
+.Header_rightAccordion__3OQs6{
+
+    padding: 0px;
+    background: var(--chakra-colors-white);
+    z-index: 10000;
+    position: absolute;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 52px;
+}
+.Header_leftAccordianDrawerStyle__mQn3G{
+    width: 372px;
+    overflow: auto;
+    display: block;
+    opacity: 1;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    min-height: 88.5vh;
+    top: 60px;
+    max-height: 88.5vh;
+    background: rgb(255, 255, 255);
+    z-index: 99999;
+    border: 1px solid #e2e8f0;
+}
+
+.Header_rightToggle__hHHh9 {
+    display: none !important;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 52px !important;
+}
+.Header_logo__4YzFA {
+    min-width: 120px;
+    margin-right: 20px;
+}
+.Header_logout__jqL4e{
+    margin-right: 10px
+}
+@media screen and (max-width: 1024px){
+    .Header_headerSearchContainer__C-KsG {
+        width: 280px;
+    }
+    .Header_headerSearchContainerInput__HvU9N{
+        font-size: 11.5px !important;
+    }
+    .Header_headerSearchContainerInput__HvU9N{
+        padding: 20px 0px 20px 37px !important
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+.Header_headerSearchContainerright__U8iXK{
+    display: none !important;
+}
+
+.Header_rightToggle__hHHh9 {
+    display: block !important;
+    width: 40px;
+}
+
+.Header_rightAccordianDrawerStyle__91FdX{
+    display: flex;
+    position: absolute;
+    right: 62px;
+    width: 140px;
+    box-shadow: 0px 4px 30px rgb(81 55 238 / 8%);
+    top: 147px;
+    background: rgb(255, 255, 255);
+    z-index: 1000000;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px !important;
+
+}
+}
+
+@media screen and (max-width:576px) {
+    .Header_headerSearchContainer__C-KsG{
+        display: none !important;
+    }
+    .Header_logo__4YzFA{
+        min-width: 100px;
+    }
+    
+}
+
+/*# sourceMappingURL=stories-Employeeshifttable-stories.80875677.chunk.css.map*/

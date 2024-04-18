@@ -1,0 +1,42 @@
+
+.cards{
+    width: 49%;
+}
+.heading{
+    min-width: 270px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.headerchild1{
+    gap:20px
+}
+.date{
+    width: 200px;
+}
+@media screen and (max-width:870px){
+    .cards {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:550px){
+        .heading {
+            min-width: 200px;
+            /* font-size: 13px */
+        }
+        .date {
+            max-width: 200px;
+        }
+                .headerchild1 {
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+                .container{
+                    padding: 10px 10px !important;
+                }
+                .headerchild2 {
+                    justify-content: space-between;
+                    width: 100%;
+                }
+}

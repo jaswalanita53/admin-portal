@@ -1,0 +1,25 @@
+.sameLine{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    gap:30px;
+}
+
+.mainParent{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 40px
+}
+
+.samewidth {
+    min-width: 280px !important;
+    max-width: 100% !important;
+    flex:29% !important;
+}
+
+.maxwidth{
+    min-width: 280px !important;
+    max-width: 29% !important;
+}
